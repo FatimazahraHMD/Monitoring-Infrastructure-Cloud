@@ -1,0 +1,33 @@
+# ==============================
+# Secrets (NEVER PUSH)
+# ==============================
+.env
+*.env
+alertmanager/alertmanager.yml
+mysqld-exporter.cnf
+
+# ==============================
+# Docker volumes & data
+# ==============================
+loki_data/
+prometheus_data/
+grafana_data/
+mysql_data/
+
+# ==============================
+# Logs & temp files
+# ==============================
+*.log
+*.tmp
+
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.pyc
+
+# ==============================
+# OS files
+# ==============================
+.DS_Store
+Thumbs.db

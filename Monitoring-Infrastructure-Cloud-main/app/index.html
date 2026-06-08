@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexTech — Premium Tech Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo">Nex<span>Tech</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Accueil</a></li>
+      <li><a href="menu.html">Produits</a></li>
+      <li><a href="#categories">Catégories</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-icon">🔍</button>
+      <button class="btn-icon">🛒 <span class="cart-count">0</span></button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <div class="hero-badge">⚡ Nouvelles arrivées 2025</div>
+      <h1 class="hero-title">
+        La tech qui<br />
+        <span class="gradient-text">redéfinit</span><br />
+        ton quotidien.
+      </h1>
+      <p class="hero-desc">Laptops ultra-puissants, smartphones premium, accessoires de pro. Tout ce dont tu as besoin, au même endroit.</p>
+      <div class="hero-cta">
+        <a href="menu.html" class="btn-primary">Explorer les produits →</a>
+        <a href="#categories" class="btn-ghost">Voir les catégories</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span>500+</span><p>Produits</p></div>
+        <div class="stat"><span>50k+</span><p>Clients</p></div>
+        <div class="stat"><span>4.9★</span><p>Note moyenne</p></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-wrap">
+        <img src="images/pc1.jpg" alt="Laptop premium" class="hero-img main-img" />
+        <div class="hero-float-card card1">
+          <span>🔥</span>
+          <div>
+            <p class="fc-label">Bestseller</p>
+            <p class="fc-name">MacBook Pro</p>
+          </div>
+        </div>
+        <div class="hero-float-card card2">
+          <span>📦</span>
+          <div>
+            <p class="fc-label">Livraison</p>
+            <p class="fc-name">24h Express</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>LAPTOPS</span><span>★</span>
+      <span>SMARTPHONES</span><span>★</span>
+      <span>TÉLÉVISEURS</span><span>★</span>
+      <span>CLAVIERS</span><span>★</span>
+      <span>SOURIS</span><span>★</span>
+      <span>CASQUES</span><span>★</span>
+      <span>LAPTOPS</span><span>★</span>
+      <span>SMARTPHONES</span><span>★</span>
+      <span>TÉLÉVISEURS</span><span>★</span>
+      <span>CLAVIERS</span><span>★</span>
+      <span>SOURIS</span><span>★</span>
+      <span>CASQUES</span><span>★</span>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="categories" id="categories">
+    <div class="section-header">
+      <p class="section-tag">Parcourir par</p>
+      <h2 class="section-title">Catégories</h2>
+    </div>
+    <div class="cat-grid">
+      <a href="menu.html?cat=laptops" class="cat-card cat-laptops">
+        <img src="images/pc2.jpg" alt="Laptops" />
+        <div class="cat-overlay">
+          <h3>Laptops</h3>
+          <p>3 produits</p>
+          <span class="cat-arrow">→</span>
+        </div>
+      </a>
+      <a href="menu.html?cat=phones" class="cat-card cat-phones">
+        <img src="images/tele1.jpg" alt="Smartphones" />
+        <div class="cat-overlay">
+          <h3>Smartphones</h3>
+          <p>3 produits</p>
+          <span class="cat-arrow">→</span>
+        </div>
+      </a>
+      <a href="menu.html?cat=tv" class="cat-card cat-tv">
+        <img src="images/tv3.jpg" alt="TV" />
+        <div class="cat-overlay">
+          <h3>Téléviseurs</h3>
+          <p>3 produits</p>
+          <span class="cat-arrow">→</span>
+        </div>
+      </a>
+      <a href="menu.html?cat=accessories" class="cat-card cat-acc">
+        <img src="images/casque.jpg" alt="Accessoires" />
+        <div class="cat-overlay">
+          <h3>Accessoires</h3>
+          <p>3 produits</p>
+          <span class="cat-arrow">→</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="featured">
+    <div class="section-header">
+      <p class="section-tag">Sélection</p>
+      <h2 class="section-title">Produits Vedettes</h2>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/pc1.jpg" alt="Laptop Pro" />
+          <span class="product-badge">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <p class="product-cat">Laptop</p>
+          <h3>MacBook Pro 14"</h3>
+          <div class="product-rating">★★★★★ <span>(128)</span></div>
+          <div class="product-footer">
+            <span class="product-price">12 999 DH</span>
+            <button class="btn-add" onclick="addToCart(this)">+ Panier</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card featured-big">
+        <div class="product-img-wrap">
+          <img src="images/tele1.jpg" alt="Samsung S24" />
+          <span class="product-badge hot">Hot 🔥</span>
+        </div>
+        <div class="product-info">
+          <p class="product-cat">Smartphone</p>
+          <h3>Samsung Galaxy S24 Ultra</h3>
+          <div class="product-rating">★★★★★ <span>(342)</span></div>
+          <div class="product-footer">
+            <span class="product-price">9 499 DH</span>
+            <button class="btn-add" onclick="addToCart(this)">+ Panier</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/tv1.jpg" alt="Smart TV" />
+          <span class="product-badge promo">-15%</span>
+        </div>
+        <div class="product-info">
+          <p class="product-cat">Téléviseur</p>
+          <h3>Smart TV 4K 55"</h3>
+          <div class="product-rating">★★★★☆ <span>(87)</span></div>
+          <div class="product-footer">
+            <span class="product-price">5 299 DH</span>
+            <button class="btn-add" onclick="addToCart(this)">+ Panier</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/casque.jpg" alt="Casque" />
+        </div>
+        <div class="product-info">
+          <p class="product-cat">Accessoire</p>
+          <h3>Casque Studio Pro</h3>
+          <div class="product-rating">★★★★★ <span>(201)</span></div>
+          <div class="product-footer">
+            <span class="product-price">1 299 DH</span>
+            <button class="btn-add" onclick="addToCart(this)">+ Panier</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="section-cta">
+      <a href="menu.html" class="btn-primary">Voir tous les produits →</a>
+    </div>
+  </section>
+
+  <!-- PROMO BANNER -->
+  <section class="promo-banner">
+    <div class="promo-content">
+      <p class="promo-tag">Offre limitée</p>
+      <h2>Livraison gratuite<br />dès 500 DH d'achat</h2>
+      <p>Valable sur toutes les commandes au Maroc · Expédié en 24h</p>
+      <a href="menu.html" class="btn-primary light">Profiter de l'offre →</a>
+    </div>
+    <div class="promo-img">
+      <img src="images/pc3.jpg" alt="Promo" />
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo">Nex<span>Tech</span></div>
+        <p>Votre partenaire tech au Maroc. Produits premium, service de confiance.</p>
+        <div class="social-links">
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Produits</h4>
+        <ul>
+          <li><a href="#">Laptops</a></li>
+          <li><a href="#">Smartphones</a></li>
+          <li><a href="#">Téléviseurs</a></li>
+          <li><a href="#">Accessoires</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Livraison</a></li>
+          <li><a href="#">Retours</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>📍 Casablanca, Maroc</li>
+          <li>📞 +212 6 00 00 00 00</li>
+          <li>✉️ contact@nextech.ma</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 NexTech. Tous droits réservés.</p>
+      <p>Paiement sécurisé · CMI · PayPal · Virement</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    let cartCount = 0;
+    function addToCart(btn) {
+      cartCount++;
+      document.querySelector('.cart-count').textContent = cartCount;
+      btn.textContent = '✓ Ajouté';
+      btn.style.background = '#22c55e';
+      setTimeout(() => {
+        btn.textContent = '+ Panier';
+        btn.style.background = '';
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

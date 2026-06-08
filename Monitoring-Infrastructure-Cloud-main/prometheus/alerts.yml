@@ -1,0 +1,59 @@
+groups:
+  - name: alertes_infrastructure
+    rules:
+      # ── SYSTÈME ────────────────────────────────────────────────
+      - alert: CPU_Eleve
+        expr: 100 - (avg by(instance)(rate(node_cpu_seconds_total{mode="idle"}[2m])) * 100) > 80
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "CPU élevé sur {{ $labels.instance }}"
+          description: "Le CPU dépasse 80% depuis 1 minute. Valeur actuelle : {{ $value | printf \"%.1f\" }}%"
+
+      - alert: RAM_Faible
+        expr: (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) * 100 < 20
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "RAM faible sur {{ $labels.instance }}"
+          description: "Moins de 20% de RAM disponible. Valeur actuelle : {{ $value | printf \"%.1f\" }}%"
+
+      - alert: Disque_Faible
+        expr: (node_filesystem_free_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}) * 100 < 15
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Disque presque plein sur {{ $labels.instance }}"
+          description: "Moins de 15% d'espace disque libre. Valeur actuelle : {{ $value | printf \"%.1f\" }}%"
+
+      # ── CONTENEURS ─────────────────────────────────────────────
+      - alert: Conteneur_Arrete
+        expr: time() - container_last_seen{name!="",name!~".*_exporter"} > 60
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Conteneur arrêté : {{ $labels.name }}"
+          description: "Le conteneur {{ $labels.name }} n'a pas été vu depuis plus de 60 secondes"
+
+      # ── APPLICATION WEB (exporter Python) ──────────────────────
+      - alert: Site_Indisponible
+        expr: site_availability_up == 0
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Site web indisponible"
+          description: "L'exporter Python ne reçoit plus de réponse HTTP du site NextTech"
+
+      - alert: Latence_Elevee
+        expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 0.5
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Latence élevée sur {{ $labels.endpoint }}"
+          description: "Le temps de réponse P95 dépasse 500ms depuis 2 minutes sur {{ $labels.endpoint }}. Valeur : {{ $value | printf \"%.3f\" }}s"

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produits — NexTech</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo">Nex<span>Tech</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="menu.html" class="active">Produits</a></li>
+      <li><a href="index.html#categories">Catégories</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-icon">🔍</button>
+      <button class="btn-icon">🛒 <span class="cart-count">0</span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-content">
+      <p class="section-tag">Catalogue complet</p>
+      <h1 class="page-title">Tous nos produits</h1>
+      <p>Découvrez notre sélection de produits tech premium</p>
+    </div>
+  </div>
+
+  <!-- CATALOGUE -->
+  <section class="catalogue">
+    <!-- FILTERS -->
+    <aside class="filters">
+      <div class="filter-group">
+        <h4>Catégorie</h4>
+        <label><input type="radio" name="cat" value="all" checked onchange="filterProducts('all')" /> Tous</label>
+        <label><input type="radio" name="cat" value="laptop" onchange="filterProducts('laptop')" /> Laptops</label>
+        <label><input type="radio" name="cat" value="phone" onchange="filterProducts('phone')" /> Smartphones</label>
+        <label><input type="radio" name="cat" value="tv" onchange="filterProducts('tv')" /> Téléviseurs</label>
+        <label><input type="radio" name="cat" value="accessory" onchange="filterProducts('accessory')" /> Accessoires</label>
+      </div>
+      <div class="filter-group">
+        <h4>Prix max</h4>
+        <input type="range" min="500" max="20000" value="20000" step="500" id="priceRange" oninput="updatePrice(this.value)" />
+        <p class="price-display">Jusqu'à <span id="priceVal">20 000</span> DH</p>
+      </div>
+      <div class="filter-group">
+        <h4>Trier par</h4>
+        <select id="sortSelect" onchange="sortProducts(this.value)">
+          <option value="default">Par défaut</option>
+          <option value="price-asc">Prix croissant</option>
+          <option value="price-desc">Prix décroissant</option>
+          <option value="rating">Mieux notés</option>
+        </select>
+      </div>
+    </aside>
+
+    <!-- PRODUCTS -->
+    <div class="products-list" id="productsList">
+
+      <!-- LAPTOPS -->
+      <div class="products-section" data-cat="laptop">
+        <h2 class="cat-section-title"><span>💻</span> Laptops</h2>
+        <div class="products-row">
+
+          <div class="product-card" data-cat="laptop" data-price="12999" data-rating="5">
+            <div class="product-img-wrap">
+              <img src="images/pc1.jpg" alt="MacBook Pro" />
+              <span class="product-badge">Nouveau</span>
+            </div>
+            <div class="product-info">
+              <p class="product-cat">Laptop · Apple</p>
+              <h3>MacBook Pro 14"</h3>
+              <p class="product-specs">M3 Pro · 18 Go RAM · 512 Go SSD</p>
+              <div class="product-rating">★★★★★ <span>(128)</span></div>
+              <div class="product-footer">
+                <span class="product-price">12 999 DH</span>
+                <button class="btn-add" onclick="addToCart(this)">+ Panier</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-cat="laptop" data-price="8499" data-rating="4.5">
+            <div class="product-img-wrap">
+              <img src="images/pc2.jpg" alt="MacBook Air" />
+            </div>
+            <div class="product-info">
+              <p class="product-cat">Laptop · Apple</p>
+              <h3>MacBook Air 15"</h3>
+              <p class="product-specs">M2 · 8 Go RAM · 256 Go SSD</p>
+              <div class="product-rating">★★★★½ <span>(95)</span></div>
+              <div class="product-footer">
+                <span class="product-price">8 499 DH</span>
+                <button class="btn-add" onclick="addToCart(this)">+ Panier</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-cat="laptop" data-price="6299" data-rating="4">
+            <div class="product-img-wrap">
+              <img src="images/pc3.jpg" alt="MacBook Air slim" />
+              <span class="product-badge promo">-10%</span>
+            </div>
+            <div class="product-info">
+              <p class="product-cat">Laptop · Apple</p>
+              <h3>MacBook Air 13"</h3>
+              <p class="product-specs">M1 · 8 Go RAM · 256 Go SSD</p>
+              <div class="product-rating">★★★★☆ <span>(214)</span></div>
+              <div class="product-footer">
+                <span class="product-price">6 299 DH</span>
+                <button class="btn-add" onclick="addToCart(this)">+ Panier</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SMARTPHONES -->
+      <div class="products-section" data-cat="phone">
+        <h2 class="cat-section-title"><span>📱</span> Smartphones</h2>
+        <div class="products-row">
+
+          <div class="product-card" data-cat="phone" data-price="9499" data-rating="5">
+            <div class="product-img-wrap">
+              <img src="images/tele1.jpg" alt="Samsung S24 Ultra" />
+              <span class="product-badge hot">Hot 🔥</span>
+            </div>
+            <div class="product-info">
+              <p class="product-cat">Smartphone · Samsung</p>
+              <h3>Galaxy S24 Ultra</h3>
+              <p class="product-specs">12 Go RAM · 256 Go · 200 MP</p>
+              <div class="product-rating">★★★★★ <span>(342)</span></div>
+              <div class="product-footer">
+                <span class="product-price">9 499 DH</span>
+                <button class="btn-add" onclick="addToCart(this)">+ Panier</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-cat="phone" data-price="6999" data-rating="4.5">
+            <div class="product-img-wrap">
+              <img src="images/tel2.jpg" alt="Samsung S21 Ultra" />
+            </div>
+            <div class="product-info">
+              <p class="product-cat">Smartphone · Samsung</p>
+              <h3>Galaxy S21 Ultra 5G</h3>
+              <p class="product-specs">12 Go RAM · 128 Go · 108 MP</p>
+              <div class="product-rating">★★★★½ <span>(189)</span></div>
+              <div class="product-footer">
+                <span class="product-price">6 999 DH</span>
+                <button class="btn-add" onclick="addToCart(this)">+ Panier</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-cat="phone" data-price="5499" data-rating="4">
+            <div class="product-img-wrap">
+              <img src="images/tel3.jpg" alt="Samsung S22" />
+              <span class="product-badge promo">-20%</span>
+            </div>
+            <div class="product-info">
+              <p class="product-cat">Smartphone · Samsung</p>
+              <h3>Galaxy S22 Ultra</h3>
+              <p class="product-specs">8 Go RAM · 128 Go · 108 MP</p>
+              <div class="product-rating">★★★★☆ <span>(276)</span></div>
+              <div class="product-footer">
+                <span class="product-price">5 499 DH</span>
+                <button class="btn-add" onclick="addToCart(this)">+ Panier</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TVs -->
+      <div class="products-section" data-cat="tv">
+        <h2 class="cat-section-title"><span>📺</span> Téléviseurs</h2>
+        <div class="products-row">
+
+          <div class="product-card" data-cat="tv" data-price="5299" data-rating="4">
+            <div class="product-img-wrap">
+              <img src="images/tv1.jpg" alt="Smart TV 4K" />
+              <span class="product-badge promo">-15%</span>
+            </div>
+            <div class="product-info">
+              <p class="product-cat">TV · Samsung</p>
+              <h3>Smart TV 4K 55"</h3>
+              <p class="product-specs">4K UHD · HDR10+ · Smart TV</p>
+              <div class="product-rating">★★★★☆ <span>(87)</span></div>
+              <div class="product-footer">
+                <span class="product-price">5 299 DH</span>
+                <button class="btn-add" onclick="addToCart(this)">+ Panier</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-cat="tv" data-price="3799" data-rating="4.5">
+            <div class="product-img-wrap">
+              <img src="images/tv2.jpg" alt="TV Music Edition" />
+            </div>
+            <div class="product-info">
+              <p class="product-cat">TV · LG</p>
+              <h3>OLED TV 48" Music</h3>
+              <p class="product-specs">OLED · Dolby Atmos · WebOS</p>
+              <div class="product-rating">★★★★½ <span>(64)</span></div>
+              <div class="product-footer">
+                <span class="product-price">3 799 DH</span>
+                <button class="btn-add" onclick="addToCart(this)">+ Panier</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-cat="tv" data-price="7499" data-rating="5">
+            <div class="product-img-wrap">
+              <img src="images/tv3.jpg" alt="Apple TV Smart" />
+              <span class="product-badge">Premium</span>
+            </div>
+            <div class="product-info">
+              <p class="product-cat">TV · Sony</p>
+              <h3>Sony Bravia XR 65"</h3>
+              <p class="product-specs">4K · Google TV · Bravia Core</p>
+              <div class="product-rating">★★★★★ <span>(112)</span></div>
+              <div class="product-footer">
+                <span class="product-price">7 499 DH</span>
+                <button class="btn-add" onclick="addToCart(this)">+ Panier</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ACCESSORIES -->
+      <div class="products-section" data-cat="accessory">
+        <h2 class="cat-section-title"><span>🎧</span> Accessoires</h2>
+        <div class="products-row">
+
+          <div class="product-card" data-cat="accessory" data-price="1299" data-rating="5">
+            <div class="product-img-wrap">
+              <img src="images/casque.jpg" alt="Casque" />
+            </div>
+            <div class="product-info">
+              <p class="product-cat">Casque · Studio</p>
+              <h3>Studio Pro Headphones</h3>
+              <p class="product-specs">Bluetooth 5.3 · 40h · ANC</p>
+              <div class="product-rating">★★★★★ <span>(201)</span></div>
+              <div class="product-footer">
+                <span class="product-price">1 299 DH</span>
+                <button class="btn-add" onclick="addToCart(this)">+ Panier</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-cat="accessory" data-price="699" data-rating="4.5">
+            <div class="product-img-wrap">
+              <img src="images/clavier.jpg" alt="Clavier" />
+            </div>
+            <div class="product-info">
+              <p class="product-cat">Clavier · Apple</p>
+              <h3>Magic Keyboard</h3>
+              <p class="product-specs">Bluetooth · Touch ID · Rechargeable</p>
+              <div class="product-rating">★★★★½ <span>(156)</span></div>
+              <div class="product-footer">
+                <span class="product-price">699 DH</span>
+                <button class="btn-add" onclick="addToCart(this)">+ Panier</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-cat="accessory" data-price="499" data-rating="4">
+            <div class="product-img-wrap">
+              <img src="images/souris.jpg" alt="Souris" />
+            </div>
+            <div class="product-info">
+              <p class="product-cat">Souris · Logitech</p>
+              <h3>G Pro Wireless</h3>
+              <p class="product-specs">HERO 25K · 70h · Ultra-légère</p>
+              <div class="product-rating">★★★★☆ <span>(98)</span></div>
+              <div class="product-footer">
+                <span class="product-price">499 DH</span>
+                <button class="btn-add" onclick="addToCart(this)">+ Panier</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /products-list -->
+  </section>
+
+  <!-- CART TOAST -->
+  <div class="toast" id="toast">✓ Produit ajouté au panier</div>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo">Nex<span>Tech</span></div>
+        <p>Votre partenaire tech au Maroc.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Produits</h4>
+        <ul>
+          <li><a href="#">Laptops</a></li>
+          <li><a href="#">Smartphones</a></li>
+          <li><a href="#">Téléviseurs</a></li>
+          <li><a href="#">Accessoires</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>📍 Casablanca, Maroc</li>
+          <li>📞 +212 6 00 00 00 00</li>
+          <li>✉️ contact@nextech.ma</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 NexTech. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+    let cartCount = 0;
+
+    function addToCart(btn) {
+      cartCount++;
+      document.querySelector('.cart-count').textContent = cartCount;
+      btn.textContent = '✓ Ajouté';
+      btn.style.background = '#22c55e';
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => {
+        btn.textContent = '+ Panier';
+        btn.style.background = '';
+        toast.classList.remove('show');
+      }, 1800);
+    }
+
+    function filterProducts(cat) {
+      const sections = document.querySelectorAll('.products-section');
+      sections.forEach(sec => {
+        if (cat === 'all' || sec.dataset.cat === cat) {
+          sec.style.display = 'block';
+        } else {
+          sec.style.display = 'none';
+        }
+      });
+    }
+
+    function updatePrice(val) {
+      document.getElementById('priceVal').textContent = parseInt(val).toLocaleString('fr-FR');
+    }
+
+    function sortProducts(val) {
+      const list = document.getElementById('productsList');
+      const cards = [...document.querySelectorAll('.product-card')];
+      const sorted = cards.sort((a, b) => {
+        if (val === 'price-asc') return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
+        if (val === 'price-desc') return parseFloat(b.dataset.price) - parseFloat(a.dataset.price);
+        if (val === 'rating') return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
+        return 0;
+      });
+      const rows = document.querySelectorAll('.products-row');
+      if (val !== 'default') {
+        const allRow = document.createElement('div');
+        allRow.className = 'products-row';
+        sorted.forEach(c => allRow.appendChild(c));
+        rows.forEach(r => r.style.display = 'none');
+        list.appendChild(allRow);
+      } else {
+        rows.forEach(r => r.style.display = '');
+        const temp = list.querySelector('.products-row:last-child');
+        if (temp && !temp.closest('.products-section')) temp.remove();
+      }
+    }
+
+    // URL filter on load
+    const urlParams = new URLSearchParams(window.location.search);
+    const cat = urlParams.get('cat');
+    if (cat) {
+      const map = { laptops: 'laptop', phones: 'phone', tv: 'tv', accessories: 'accessory' };
+      if (map[cat]) {
+        document.querySelector(`input[value="${map[cat]}"]`).checked = true;
+        filterProducts(map[cat]);
+      }
+    }
+  </script>
+</body>
+</html>
