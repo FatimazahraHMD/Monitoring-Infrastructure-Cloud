@@ -96,7 +96,7 @@ monitoring-stack/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/AssyaELM/Monitoring-Infrastructure-Cloud.git
+git clone https://github.com/FatimazahraHMD/Monitoring-Infrastructure-Cloud.git
 cd monitoring-stack
 ```
 
