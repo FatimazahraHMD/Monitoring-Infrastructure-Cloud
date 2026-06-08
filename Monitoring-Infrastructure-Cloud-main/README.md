@@ -525,18 +525,5 @@ docker-compose restart custom-exporter
 
 ---
 
-## 👤 Author
 
-**Assya**
-Cloud Infrastructure & Monitoring — 2026
 
----
-
-## 📄 License
-
-This project was developed as part of an academic cloud infrastructure course.
-Feel free to use it as a reference for your own monitoring projects.
-
----
-
-> ⭐ **If this project helped you, please give it a star!**
